@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>java-tomcat-maven-example</artifactId>
+  <artifactId>SOMORSWEBAPP</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>hello Maven Webapp</name>
+  <version>1.0.0</version>
+  <name>SOM ORS Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>java-tomcat-maven-example</finalName>
+    <finalName>SOMORSApp</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -27,13 +27,12 @@
             <phase>package</phase>
             <goals><goal>copy</goal></goals>
             <configuration>
-                  <outputDirectory>../a/ORSApplication/</outputDirectory>
               <artifactItems>
                 <artifactItem>
                   <groupId>com.github.jsimone</groupId>
-                  <artifactId>webapp-runner</artifactId>
-                  <version>8.5.11.3</version>
-                  <destFileName>webapp-runner.jar</destFileName>
+                  <artifactId>SOM ORS</artifactId>
+                  <version>1.2.3.4</version>
+                  <destFileName>SOMORSApp.jar</destFileName>
                 </artifactItem>
               </artifactItems>
             </configuration>
