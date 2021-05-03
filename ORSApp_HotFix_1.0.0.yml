@@ -14,7 +14,7 @@ trigger:
 ##### Setting Stages #####
 stages:
 - stage: 'BuildStage'
-  displayName: 'ORS Application Build from Release Branch'
+  displayName: 'ORS Application Build from HotFix Branch'
   jobs:
     - job: 'BuildProcess'
       displayName: 'ORS Build Process'
