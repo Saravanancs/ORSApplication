@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>	
 	<groupId>org.springframework</groupId>
-	<artifactId>gs-maven</artifactId>
-	<packaging>jar</packaging>
-	<version>0.1.2</version>
+	<artifactId>ORSApplication</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -42,7 +42,10 @@
 						<goals>
 							<goal>shade</goal>
 						</goals>
-					</execution>
+					 <configuration>
+				     <outputDirectory>../a/ORSApplication/</outputDirectory>
+                        </configuration>
+                    </execution>
 				</executions>
 			</plugin>
 		</plugins>
