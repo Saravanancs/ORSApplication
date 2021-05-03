@@ -25,7 +25,7 @@
         <executions>
           <execution>
             <phase>package</phase>
-            <goals><goal>shade</goal></goals>
+            <goals><goal>war</goal></goals>
             <configuration>
               <artifactItems>
                 <artifactItem>
