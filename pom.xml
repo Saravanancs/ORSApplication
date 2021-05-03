@@ -25,8 +25,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                              <outputFile>../a/ORSApplication/ORSApplication.war</outputFile>
-                             <outputDirectory>../a/ORSApplication/</outputDirectory>                            
+                              <outputFile>../a/ORSApplication/ORSApplication.war</outputFile>                
                         </configuration>
                     </execution>
                 </executions>
