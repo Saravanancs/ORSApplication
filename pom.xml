@@ -5,8 +5,6 @@
   <artifactId>SOMORSWEBAPP</artifactId>
   <packaging>war</packaging>
   <version>1.0.0</version>
-  <name>SOM ORS Webapp</name>
-  <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
