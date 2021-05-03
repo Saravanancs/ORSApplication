@@ -25,7 +25,7 @@
         <executions>
           <execution>
             <phase>package</phase>
-            <goals><goal></goal></goals>
+            <goals><goal>manifest</goal></goals>
             <configuration>
               <artifactItems>
                 <artifactItem>
