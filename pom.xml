@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>HelloWorld</artifactId>
-    <packaging>jar</packaging>
-    <version>1.1.2</version>   
+    <artifactId>ORSApplication</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0</version>   
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -25,7 +25,8 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                             <outputDirectory>../a/HelloWorld/</outputDirectory>                            
+                              <outputFile>../a/ORSApplication/ORSApplication.war</outputFile>
+                             <outputDirectory>../a/ORSApplication/</outputDirectory>                            
                         </configuration>
                     </execution>
                 </executions>
