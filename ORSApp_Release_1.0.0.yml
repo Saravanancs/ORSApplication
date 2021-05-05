@@ -32,7 +32,7 @@ stages:
             jdkFile: $(jdkFilePath)
             jdkDestinationDirectory: $(jdkDestinationPath)
             cleanDestinationDirectory: false
-
+        
         - task: Maven@3
           displayName: 'Maven Build'
           inputs:
@@ -46,7 +46,12 @@ stages:
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
             goals: 'package'
             #goals: 'integration-test -DskipIntegrationTests=false -Dmaven.test.failure.ignore=true'
-          
+        - task: CopyFiles@2
+          inputs:
+            SourceFolder: '$(Build.SourcesDirectory)\target\'
+            Contents: '*.war'
+            TargetFolder: '$(Build.ArtifactStagingDirectory)\$(TargetApplicationName)\'
+            
           # Archive files
           # Compress files into .7z, .tar.gz, or .zip
         - task: ArchiveFiles@2
