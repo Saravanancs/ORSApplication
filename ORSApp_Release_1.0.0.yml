@@ -50,8 +50,17 @@ stages:
           # Archive files
           # Compress files into .7z, .tar.gz, or .zip
         - task: ArchiveFiles@2
+          displayName: Archive Build Files
           inputs:
             rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
             includeRootFolder: false  
             archiveType: 'zip'
             archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'           
+        
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish Artifact: $(Build.BuildNumber).zip'
+          inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
+            #ArtifactName: '$(Build.DefinitionName).$(Build.BuildId).zip'
+            ArtifactName: '$(Build.BuildNumber)'
+            artifactType:  container
