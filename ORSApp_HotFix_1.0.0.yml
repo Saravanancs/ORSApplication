@@ -17,7 +17,7 @@ stages:
   displayName: 'ORS Application Build from HotFix Branch'
   jobs:
     - job: 'BuildProcess'
-      displayName: 'ORS Build Process'
+      displayName: 'ORS Build Process Job'
       pool: 
         name: 'ORSAgentPool'      
         demands:
@@ -47,10 +47,20 @@ stages:
             goals: 'package'
             #goals: 'integration-test -DskipIntegrationTests=false -Dmaven.test.failure.ignore=true'
        
-        - task: PublishBuildArtifacts@1
-          displayName: 'Publish Artifact: $(Build.DefinitionName).$(Build.BuildId).zip'
+          # Archive files
+          # Compress files into .7z, .tar.gz, or .zip
+        - task: ArchiveFiles@2
+          displayName: Archive Build Files
           inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+            includeRootFolder: false  
+            archiveType: 'zip'
+            archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'           
+        
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish Artifact: $(Build.BuildNumber).zip'
+          inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
             #ArtifactName: '$(Build.DefinitionName).$(Build.BuildId).zip'
-            ArtifactName: '$(Build.BuildNumber).zip'
+            ArtifactName: '$(Build.BuildNumber)'
             artifactType:  container
