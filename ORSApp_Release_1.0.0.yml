@@ -17,7 +17,7 @@ stages:
   displayName: 'ORS Application Build from June Release Branch'
   jobs:
     - job: 'BuildProcess'
-      displayName: 'ORS Build Process'
+      displayName: 'ORS Application Build Job'
       pool: 
         name: 'ORSAgentPool'      
         demands:
@@ -61,6 +61,5 @@ stages:
           displayName: 'Publish Artifact: $(Build.BuildNumber).zip'
           inputs:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
-            #ArtifactName: '$(Build.DefinitionName).$(Build.BuildId).zip'
             ArtifactName: '$(Build.BuildNumber)'
             artifactType:  container
